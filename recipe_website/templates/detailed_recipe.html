@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ recipe.title }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ recipe.title }}</h2>
+    <p><strong>Автор:</strong> {{ recipe.author }}</p>
+    <p><strong>Описание:</strong> {{ recipe.description }}</p>
+    <p><strong>Ингредиенты:</strong> {{ recipe.ingredients }}</p>
+    <p><strong>Шаги приготовления:</strong> {{ recipe.preparation_steps }}</p>
+    <p><strong>Время приготовления:</strong> {{ recipe.cooking_time }} минут</p>
+    <p><strong>Вес:</strong> {{ recipe.weight }} грамм</p>
+    {% if recipe.images %}
+        <img src="{{ recipe.images.url }}" alt="{{ recipe.title }}">
+    {% endif %}
+    <a href="{% url 'recipe_edit' recipe.id %}" class="button">Редактировать рецепт</a>
+    <form action="{% url 'recipe_delete' recipe.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" 
+               value="Удалить рецепт" onclick="return confirm('Вы уверены, что хотите удалить этот рецепт?');">
+    </form>
+{% endblock %}

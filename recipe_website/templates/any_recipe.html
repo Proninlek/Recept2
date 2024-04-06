@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h2>Случайные рецепты</h2>
+    <div class="recipes">
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <h3><a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a></h3>
+                <p>{{ recipe.description|truncatewords:20 }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
