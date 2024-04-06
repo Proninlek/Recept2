@@ -27,13 +27,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_DOMAIN = 'proninlek13.pythonanywhere.com'
+CSRF_COOKIE_DOMAIN = 'Proninlek13.pythonanywhere.com'
 
 
 ALLOWED_HOSTS = [
     # '192.168.0.11',
     '127.0.0.1',
-    'proninlek13.pythonanywhere.com',
+    'Proninlek13.pythonanywhere.com',
 ]
 
 INTERNAL_IPS = [
@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'recipe_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'proninlek13$Recept',
-        'USER': 'proninlek13',
+        'NAME': 'Proninlek13$default',
+        'USER': 'Proninlek13',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'proninlek13.mysql.pythonanywhere-services.com',
+        'HOST': 'Proninlek13.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
