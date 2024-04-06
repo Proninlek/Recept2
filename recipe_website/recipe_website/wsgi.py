@@ -14,7 +14,7 @@ import sys
 
 from dotenv import load_dotenv
 
-project_folder = os.path.expanduser('~/Recept') # adjust as appropriate
+project_folder = os.path.expanduser('~/Recept2') # adjust as appropriate
 load_dotenv(os.path.join(project_folder, '.env'))
 
 ## assuming your django settings file is at '/home/Proninlek13/mysite/mysite/settings.py'
